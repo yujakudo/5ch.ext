@@ -1,0 +1,527 @@
+{
+	"//src/settingsSchema.js": true,
+	"Thread view (read.cgi)":
+	"スレッド表示 (read.cgi)",
+	"Enable":
+	"有効にする",
+	"Enables the extension on the thread view.":
+	"スレッド表示でこの拡張機能を有効にします。",
+	"Turn this off if you want the extension not to work on the thread view.":
+	"スレッド表示でこの拡張機能を使わない場合はOFFにしてください。",
+	"General":
+	"一般",
+	"Enable popup menu":
+	"ポップアップメニューを有効にする",
+	"Enables popup menu.":
+	"ポップアップメニューを有効にします。",
+	"If turn this on, opens a popup menu when an icon at right top of each posts pointed.":
+	"ONにすると、各投稿の右上にあるアイコンをポイントしたときにポップアップメニューが開きます。",
+	"Enable meta controls":
+	"ヘッダ   コントロールを有効にする",
+	"Enables controls on meta information area of each posts.":
+	"各投稿のヘッダ情報のコントロールを有効にします。",
+	"If turn this on, you can do same things as the popup menu item by clicking information of posts.":
+	"ONにすると、各投稿のヘッダ情報のクリックでポップアップメニューと同じことができるようになります。",
+	"<ul><li>Clicking forced ID(ﾜｯﾁｮｲ) or ID, A list of posts by that ID arises. </li>":
+	"<ul><li>ﾜｯﾁｮｲあるいはIDをクリックすると、そのIDによる投稿のリストが表示されます。</li>",
+	"<li>Clicking '&clubs;', A tree view arises.</li></ul>":
+	"<li>'&clubs;'をクリックするとツリーが表示されます。</li></ul>",
+	"Colors ID and ﾜｯﾁｮｲ":
+	"IDとﾜｯﾁｮｲに色をつける",
+	"Colors ID and ﾜｯﾁｮｲ as it's value":
+	"IDとﾜｯﾁｮｲに、その値に従って色をつけます。",
+	"Extend CSS":
+	"CSS拡張",
+	"Applies CSS to remove unnecessary spaces.":
+	"必要のないスペースを埋めるCSSを適用します。",
+	"Blocking duration":
+	"ブロック期間",
+	"Duration in day to keep blocking of specified user ID.":
+	"IDブロックを継続する日数を指定します。",
+	"When this duration expires, the ID is automatically unblocked.":
+	"この日数が経過した後は、ブロックIDは自動的に解除されます。",
+	" Set 0 not to unblock automatically.":
+	"自動解除をしないようにするには、0を設定してください。",
+	"Animation":
+	"アニメーション",
+	"Animation where posts and the form slide.":
+	"投稿とフォームのスライドアニメーション。",
+	"Durtion":
+	"時間",
+	"Duration of the animation in millisecond.":
+	"アニメーションの時間をミリ秒で指定します。",
+	"Set 0 not to animating.":
+	"アニメーションをしないようにするには、0を指定します。",
+	"Hides blocked post":
+	"ブロックした投稿を隠す",
+	"Hides blocked posts completely.":
+	"ブロックしたIDの投稿を完全に非表示にします。",
+	"If you turn this off, hides only the message of blocked posts and add 'あぼ～ん' to the head of user name.":
+	"OFFにした場合はメッセージのみが非表示になり、ユーザー名の前に「あぼ～ん」が表示されます。",
+	"Min. post width":
+	"最小の投稿幅",
+	"Minimum width in pixel of each post.":
+	"最小の投稿幅をピクセルで指定します。",
+	"In the treeview, width of post becomes narrower as it’s indent, but does not become narrower than this width.":
+	"ツリー表示では、投稿の字下げに従って表示幅が狭くなります。しかしこの幅より小さくなることはありません。",
+	"Links":
+	"リンク",
+	"Correction":
+	"リンク修正",
+	"Corrects broken or immature URLs.":
+	"不完全なURLを修正します。",
+	"URL cut at '&' are connected.":
+	"'&'で切られたURLを結合します。",
+	" Strings not recognized as URL because of starting by 'ttp' or including a full width character are made as link.":
+	"また'ttp'で始まっていたり全角一文字が挿入され、URLとはみなされなかった文字列をリンクにします。",
+	"Opens link in new tab":
+	"リンクを新しいタブで開く",
+	"Opens a linked external page in new tab.":
+	"外部ページへのリンクを新しいタブで開きます。",
+	"If you turn this off, linked pages are opened in the existing tab,":
+	"これをOFFにした場合、リンク先のページは既存のタブに開きます。",
+	" but you can open a link in new tab by clicking with Ctrl key.":
+	"しかしこの場合もCtrlキーを押しながらクリックすることで、新しいタブにページを開けます。",
+	"Disable anchor as link":
+	"アンカーをリンクにしない",
+	" Does not jump new page when clicking an anchor that refers a post.":
+	"他の投稿を参照しているアンカーをクリックしても、新しいページを開きません。",
+	"Instead of new page, tries to scroll to the post referred.":
+	"新しいページの代わりに、参照先の投稿があればそこにスクロールします。",
+	"Direct link":
+	"ダイレクトリンク",
+	"When clicking a link, skips https://jump.5ch.net and jumps to linked page directly.":
+	"リンクをクリックした時に、https://jump.5ch.net をスキップしてリンク先のページに直接移動します。",
+	"Auto jump":
+	"自動ジャンプ",
+	"Automatically jumps to another site without clicking a link at https://jump.2h.net.":
+	"https://jump.2h.net にて、リンクをクリックしなくても自動的に外部サイトに移動します。",
+	"Post form":
+	"投稿フォーム",
+	"Always 'sage'":
+	"常にsageる",
+	"Automatically fills an email field with 'sage'.":
+	"メールアドレス欄を自動的にsageます。",
+	"Jump to same posts":
+	"同じ投稿に移動",
+	"After posting, jumps to the thread view from the first post currently shown.":
+	"投稿の後、現在表示している最初の投稿からのスレッド表示に移動します。",
+	"Turn this off to jump to the view of the latest 50 posts.":
+	"最新50投稿の表示に移動したい場合はOFFにします。",
+	"Max. width":
+	"最大幅",
+	"Maximum width of the form in pixel":
+	"フォームの最大幅をピクセル単位で指定します。",
+	"Increase if you feel that the post form is narrow.":
+	"投稿フォームが狭いと感じる場合は増やしてください。",
+	"Small name field":
+	"小さい名前欄",
+	"Makes name and email field small for height of the post form to be lower.":
+	"名前欄とメールアドレス欄を小さくし、投稿フォームの高さを低くします。",
+	"It works better with the following sliding form.":
+	"下の「フォームのスライド」をONにする場合に見やすくなります。",
+	"Sliding form":
+	"フォームのスライド",
+	"Makes the post form slide to bottom of a post when clicking a post number instead of 'Quick reply'.":
+	"投稿番号をクリックしたときに、その投稿の下に投稿フォームがスライドします。'Quick reply'の代わりです。",
+	"Quotation symbol":
+	"引用記号",
+	"A symbol of the beginning of a quoted sentences.":
+	"投稿文を引用した時の、文頭の記号です。",
+	"If you want to quote, select sentences before clicking a post number.":
+	"投稿を引用したい場合は、投稿番号をクリックする前に文を選択しておきます。",
+	"Media popup":
+	"メディアポップアップ",
+	"Media - image, video or audio - is pop up and you can preview when pointing those link.":
+	"リンクをポイントしたときに、画像、動画、音声などのメディアがポップアップし、プレビューできるようになります。",
+	"Media of youtube.com and imgur.com are shown in an embedded frame.":
+	"youtube.com と imgur.com のメディアは組み込みフレームで表示されます。",
+	"Initial width":
+	"初期幅",
+	"Initial width of the popup in pixel.":
+	"ポップアップの初期幅をピクセルで指定します。",
+	"Actual size of the popup is modified by 'Size adjustment'.":
+	"実際のポップアップのサイズは「サイズ調整」の指定によって調整されます。",
+	" But size of embedded frames cannot be controlled.":
+	"しかし組み込みフレームのサイズはコントロールできません。",
+	" Youtube keeps initial size and Imgur keeps only initial width.":
+	"Youtube は初期サイズのままです。Imgur は初期幅のみを維持します。",
+	"Initial height":
+	"初期高さ",
+	"Initial height of the popup in pixel. See the help of 'Initial width' for more.":
+	"ポップアップの初期高さをピクセルで指定します。詳細は「初期幅」を参照してください。",
+	"Size adjustment":
+	"サイズ調整",
+	"Full":
+	"最大",
+	"Stretch":
+	"伸ばす",
+	"Inside":
+	"納める",
+	"Type of modification of size of the popup for media that is not an embedded frames.":
+	"ポップアップのサイズの調整法を指定します。ただし組み込みフレームには作用しません。",
+	"<ul><li>'Inside' keeps media size not to go out of initial size.</li>":
+	"<ul><li>「納める」の場合、メディアのサイズは初期サイズより大きくなることはありません。</li>",
+	"<li>'Stretch' keeps the length of one side and stretches the other side when media goes out of the initial size.</li>":
+	"<li>「伸ばす」の場合でメディアのサイズが初期サイズを越えるときは、一辺の長さは初期サイズを維持し、もう一辺を伸長します。</li>",
+	"<li>'Full' stretches both side but keeps not to go out of the window.</li>":
+	"<li>「最大」の場合、両方の辺を伸長しますが、ウィンドウのサイズを越えることはありません。</li>",
+	"</ul>Any type might reduce media size but does not expands.":
+	"</ul>どの指定でも、メディアのサイズを縮小することがありますが、拡大することはありません。",
+	"Initial side to attach":
+	"開く方向",
+	"Top":
+	"上",
+	"Bottom":
+	"下",
+	"Right":
+	"右",
+	"A side of a link where the popup opens initialy.":
+	"最初にポップアップがリンクのどの方向に開くかを指定します。",
+	"In spite of this setting, changes a side to try not to hide the link as possible.":
+	"この指定に関わらず、ポップアップの開く方向はなるべくリンクを隠さないように変化します。",
+	" If you annoy movement of the popup when loading, 'Right' is recommended.":
+	"もしロード中のポップアップの移動が気になる場合は、「右」にすることをお勧めします。",
+	" Even though 'Right' is selected, An audio control opens on the top or bottom side of the link.":
+	"「右」を指定した場合でも、オーディオのコントロールは常にリンクの上か下に開きます。",
+	"Auto play":
+	"自動再生",
+	"Automatically starts playing when popped up.":
+	"ポップアップ時に自動的に再生を開始します。",
+	"Even though you turned this on, you might start playing manually according to the browser's policy.":
+	"これをONにした場合でも、ブラウザのポリシーによっては手動で再生を開始する必要があるかもしれません。",
+	"Popup delay":
+	"遅延時間",
+	"Delay in millisecond from when a link is pointed to when the popup open.":
+	"リンクをポイントしてからポップアップが開くまでの遅延時間をミリ秒で指定します。",
+	"It is also delay from when the cursor leave the link or the popup to when the popup close.":
+	"またこの時間は、カーソルがポップアップやリンクを離れてからポップアップが閉じるまでの遅延時間でもあります。",
+	" Increase if you feel annoyance for the popup when the cursor passes a link, or unintended close of the popup when moving the cursor from the link to the popup.":
+	"カーソルがリンクを通過しただけでポップアップが開くことが気になる場合、あるいはリンクからポップアップにカーソルを移動しようとして意図せずポップアップが閉じる場合は、この値を増やしてください。",
+	" Or decrease if you feel annoyance for delay of the popup.":
+	"また、ポップアップの遅延時間が気になる場合は、この値を減らしてください。",
+	"List of threads view (subback.html)":
+	"スレッド一覧 (subback.html)",
+	"Enables the extension on the list of threads.":
+	"スレッド一覧で拡張機能を有効にします。",
+	"Turn this off if you want the extension not to work the list of threads.":
+	"スレッド一覧でこの拡張機能を使わない場合はOFFにしてください。",
+	"Default order":
+	"デフォルトの並び順",
+	"Original":
+	"オリジナル",
+	"Title":
+	"タイトル",
+	"Post count":
+	"投稿数",
+	"Default order of threads.":
+	"デフォルトの、スレッドの並び順です。",
+	"<ul><li>'Original': In original order.</li>":
+	"<ul><li>オリジナル：標準の並び順です。</li>",
+	"<li>'Title': Sorted by title.</li>":
+	"<li>タイトル：タイトルで並べ替えます。</li>",
+	"<li>'Post count': In order of number of posts</li></ul>":
+	"<li>投稿数：投稿数の少ない順です。</li></ul>",
+	"Opens in existing tab":
+	"現在のタブで開く",
+	"Opens thread view in existing tab.":
+	"スレッド表示を現在のタブで開きます。",
+	"You can also open in new tab by clicking with Ctrl key.":
+	"またCtrlキーを押しながらクリックすることで、新しいタブに開くこともできます。",
+	" If you turn this off, opens in new tab.":
+	"OFFにした場合は、常に新しいタブで開きます。",
+	"Link to all posts":
+	"すべての投稿にリンク",
+	"Links thread title to all posts view.":
+	"スレッドタイトルを、すべての投稿へのリンクにします。",
+	"If you turn this off, links to latest 50 posts view.":
+	"OFFにした場合は、最新50投稿へのリンクになります。",
+	" In any case, you can open the other view by clicking number above the title or number of posts below the title.":
+	"どちらの場合でも、タイトルの上の番号か下の投稿数をクリックすることで、もう一方の投稿表示に移動できます。",
+	"List of boards (bbstable.html)":
+	"掲示板一覧 (bbstable.html)",
+	"Enables the extension on the list of boards.":
+	"掲示板一覧で拡張機能を有効にします。",
+	"Turn this off if you want the extension not to work on the list of boards.":
+	"掲示板一覧でこの拡張機能を使わない場合はOFFにしてください。",
+	"Shows link on existing tab":
+	"リンクを現在のタブで開く",
+	"Opens the board page in existing tab.":
+	"掲示板のページを現在のタブで開きます。",
+	"Link to list of thread":
+	"スレッド一覧へリンク",
+	"Links board title to list of thread.":
+	"掲示板タイトルをスレッド一覧へリンクします。",
+	" If you turn this off, links to the top page of the board.":
+	"OFFにした場合は、掲示板のトップページへリンクします。",
+	"Footer toolbar":
+	"フッターツールバー",
+	"Shows the footer toolbar at the bottom of the window.":
+	"ウィンドウの下にフッターツールバーを表示します。",
+	"It still works even if you set to hide.":
+	"これを「隠す」に設定した場合でも、ツールバーは動作しています。",
+	" Disable each view If you want the bar to be turned off completely.":
+	"ツールバーを完全に停止するには、各表示での拡張機能を無効にする必要があります。",
+	"Show":
+	"表示する",
+	"Hide":
+	"隠す",
+	"Visibility of the footer tool bar.":
+	"フッターツールバーの表示",
+	"Scroll animation":
+	"スクロールのアニメーション",
+	"Animates when the page scrolls by a button or key.":
+	"ボタンやキーによるスクロールをアニメーションにします。",
+	"Shortcut keys":
+	"ショートカットキー",
+	"Shortcut keys of buttons in the toolbar.":
+	"ツールバー上のボタンのショートカットキーです。",
+	"To set keys, focus each field and press a key with/without modification key - Shift, Ctrl, Command, Alt, Meta - as you like.":
+	"キーをセットするときは、各入力欄をクリックしたのちに割り当てたいキーを、必要なら機能キー（Shift, Ctrl, Command, Alt, Meta）とともに押します。",
+	" To reset, press Escape key. So Escape key can not be assigned.":
+	"キーをリセットするときは、エスケープキーを押します。エスケープキーはショートカットキーに割り当てることはできません。",
+	" To use Ctrl key for modification is not recomended because it might be assinged by the browser.":
+	"同時に押す機能キーをCtrlキーにすることはお勧めしません。ブラウザの機能に割り当てられているかもしれないからです。",
+	"Scroll to an upper item":
+	"上の項目にスクロール",
+	"Scroll to a lower item":
+	"下の項目にスクロール",
+	"Scroll to upper hidden items":
+	"上の隠れた項目にスクロール",
+	"Scroll to lower hidden items":
+	"下の隠れた項目にスクロール",
+	"Scroll to top":
+	"一番上にスクロール",
+	"Scroll to bottom":
+	"一番下にスクロール",
+	"Scroll to a previous item":
+	"前の項目にスクロール",
+	"Scroll to a next item":
+	"次の項目にスクロール",
+	"Scroll to bookmark":
+	"ブックマークにスクロール",
+	"Jump to list of boards":
+	"掲示板一覧に移動",
+	"Jump to list of threads":
+	"スレッド一覧に移動",
+	"Get all posts":
+	"すべての投稿",
+	"Update the page":
+	"ページの更新",
+	"Update from the last post":
+	"最後の投稿から更新",
+	"Update from the bookmark":
+	"ブックマークから更新",
+	"Vertical lines":
+	"縦組み",
+	"Settings for vertical lines in list of threads and list of boards view.":
+	"スレッド一覧や掲示板一覧での、縦組み文字の設定です。",
+	"Half width to fill":
+	"半角カナを全角にする",
+	"Converts half width kana to full width katakana.":
+	"半角カナを全角カタカナにします。",
+	"Half width kana will not be upright in mixed orientation.":
+	"半角カナは、混在表示の時に縦書きにはなりません。",
+	"To ASCII":
+	"ASCIIに変換",
+	"Converts characters to ASCII as possible.":
+	"同じ文字がASCIIコードにある全角文字は、半角のASCIIにします。",
+	"It makes a title shorter a little.":
+	"タイトルがいくぶん短くなるかもしれません。",
+	"Text orientation":
+	"テキストの向き",
+	"Mixed":
+	"混在",
+	"Upright":
+	"縦書き",
+	"Sideways":
+	"横書き",
+	"Text orientation.":
+	"テキストの向きです。",
+	"<ul><li>'Mixed': Upright and sideways texts are mixed.":
+	"<ul><li>混在：縦書きと横書きのテキストが混在します。",
+	" Japanese will be upright, and English will be sideways.</li>":
+	"日本語は縦書きになり、英語は横書きになるでしょう。</li>",
+	"<li>'Upright': All texts are upright.</li>":
+	"<li>縦書き：すべてのテキストが縦書きになります。</li>",
+	"<li>'Sideways': All texts are sideways.</li></ul>":
+	"<li>横書き：すべてのテキストが横書きになります。</li></ul>",
+	"If you set this to 'Sideways', It is better to set following 'Combination for upright' to 'Off' and clear 'Combined terms'.":
+	"もし「横書き」に設定する場合は、以降の「縦中横の文字数」を「OFF」にし、「縦中横の用語」を空白にするのがよいでしょう。",
+	"Combination for upright":
+	"縦中横の文字数",
+	"Off":
+	"OFF",
+	"-1-":
+	"1文字",
+	"-2-":
+	"2文字",
+	"-3-":
+	"3文字",
+	"-4-":
+	"4文字",
+	"Number of characters to be combined and made upright.":
+	"組み合わせて小さく横組みにする英数文字の文字数です。",
+	"Combined terms":
+	"縦中横の用語",
+	"Terms combined and made upright in spite of 'Combination for upright' settings.":
+	"「縦中横の文字数」の設定に関わらず、用語を横組みにします。",
+	"Separate by '|' for more than a term. '.', '&#92;w' and '&#92;d' can be used for wildcards, but '&#92;.' must be used instead of '.'.":
+	"2単語以上を指定する場合は、'|'で区切ります。ワイルドカードとして '.', '&#92;w', '&#92;d'が利用できますが、'.'の代わりに '&#92;.' を指定する必要があります。",
+	" Actualy, you can use regular expression.":
+	"実際のところは正規表現が利用可能です。",
+	"Delay from resizing":
+	"サイズ変更時の遅延",
+	"Delay in millisecond from window resizing to relayout.":
+	"ウィンドウのサイズ変更から、レイアウト更新までの遅延時間をミリ秒で指定します。",
+	"Delay is necessary to prevent frequent relayout during drag.":
+	"ドラッグ中に頻繁にレイアウト更新がなされないようにするため、遅延時間は必要です。",
+	" Increase if you annoy frequent relayout during drag.":
+	"ドラッグ中にレイアウト更新がなされるのが気になるのであれば、値を増やしてください。",
+	" Or, decrease if you annoy delay when maximize or normalize window.":
+	"ウィンドウの最大化や標準サイズに戻す時に遅延が気になるのであれば、値を減らしてください。",
+	"Basic settings":
+	"基本設定",
+	"Language":
+	"言語",
+	"Auto":
+	"自動",
+	"Japanese":
+	"日本語",
+	"Enable the extension":
+	"拡張機能を有効にする",
+	"Enables the extension.":
+	"この拡張機能を有効にします。",
+	"Turn this off if you want the extension not to work on all pages.":
+	"すべてのページでこの拡張機能を利用しない場合は、OFFを指定してください。",
+	"//src/content/bbsmenu.js": true,
+	"%num% boards are there. Ext took %time% msec to prepare.":
+	"%num%個の掲示板があります。拡張機能は準備に %time%msec かかりました。",
+	"//src/content/footerBar.js": true,
+	"List of boards":
+	"掲示板一覧",
+	"List of threads":
+	"スレッド一覧",
+	"All posts":
+	"すべての投稿",
+	"Update":
+	"更新",
+	"Update from last":
+	"最後の投稿から更新",
+	"Settings":
+	"設定",
+	"Scroll to the bookmark":
+	"ブックマークへスクロール",
+	"Scroll to a previous post":
+	"前の項目にスクロール",
+	"Scroll to a next post":
+	"次の項目にスクロール",
+	"//src/content/mediaPopup.js": true,
+	"Load error":
+	"ロードエラー",
+	"//src/content/PostTool.js": true,
+	"Tree view":
+	"ツリー表示",
+	"Copy":
+	"コピー",
+	"Unbookmark":
+	"ブックマークをはずす",
+	"Bookmark":
+	"ブックマークする",
+	"List %%":
+	"%% の投稿一覧",
+	"UnBlock %%":
+	"%% のブロックを解除",
+	"Block %%":
+	"%% をブロックする",
+	"//src/content/readcgi.js": true,
+	"%num% posts are there. The Ext. took %time% msec to prepare.":
+	"%num%個の投稿があります。拡張機能は準備に %time%msec かかりました。",
+	"%id% posted %num% .":
+	"%id% の投稿数 %num%。",
+	"%% ancestors, ":
+	"先祖 %%、",
+	"%% siblings, ":
+	"兄弟 %%、",
+	"%% children, ":
+	"子 %%、",
+	"%% grandchildren, ":
+	"孫 %%、",
+	"the post has.":
+	"ツリーに投稿があります。",
+	"Copy the post #%%":
+	"%%",
+	"Mark the thread":
+	"スレッドをマーク",
+	"Add the thread to favorites. The thread becomes more accessible.":
+	"このスレッドをお気に入りに追加します。このスレッドにアクセスしやすくなります。",
+	"//src/content/subback.js": true,
+	"%num% threads are there. The Ext. took %time% msec to prepare.":
+	"%num%個のスレッドがあります。拡張機能は準備に %time%msec かかりました。",
+	"Mark the board":
+	"掲示板をマーク",
+	"Add the board to favorites. The board becomes more accessible.":
+	"この掲示板をお気に入りに追加します。この掲示板にアクセスしやすくなります。",
+	"Order":
+	"並び順",
+	"Order of threads.":
+	"スレッドの並び順です。",
+	"If you mark the board, this setting is stored.":
+	"掲示板をマークすると、この設定が保存されます。",
+	"//src/lib/UnitScroll.js": true,
+	"//src/popup/popup.html": true,
+	"Unmark selection":
+	"選択項目のマークをはずす",
+	"The first list is a list of marked boards and boards containing marked or bookmarked threads.\nThe following list is a list of marked and bookmarked threads.":
+	"上のリストは、マークされた掲示板と、マーク/ブックマークされたスレッドをもつ掲示板のリストです。\n下のリストはマーク/ブックマークされたスレッドのリストです。",
+	"Click a board name to list threads on the board, then click a thread name to jump the thread.":
+	"掲示板名をクリックすると、その掲示板のスレッドが表示されます。スレッド名をクリックするとそのスレッド表示に移動します。",
+	"Icons are links to following pages:":
+	"各アイコンは、以下のページへのリンクです。",
+	"- To the list of boards,":
+	" - 掲示板一覧",
+	"- To a list of threads on a board,":
+	" - スレッド一覧",
+	"- To a thread view of all posts,":
+	" - スレッド表示：すべての投稿",
+	"- To a thread view of latest 50 posts,":
+	" - スレッド表示：最新50投稿",
+	"- To a thread view of posts after bookmark.":
+	" - スレッド表示：ブックマーク以降の投稿",
+	"Thread name is a link as same as":
+	"スレッド名のリンクは、",
+	"or":
+	"か",
+	"that is not displayed.":
+	"のどちらか表示されていないほうのリンクと同じです。",
+	"Setting of 'Link to all posts' in 'List of threads' determines whether a link to each posts becomes an icon or a title.":
+	"「スレッド一覧＞すべての投稿にリンク」の設定により、それぞれのリンクがアイコンになるかタイトルになるかが決まります。",
+	"Remove selection":
+	"選択項目を削除",
+	"Clear all IDs":
+	"すべてのIDをクリア",
+	"Clear all ﾜｯﾁｮｲ":
+	"すべてのﾜｯﾁｮｲをクリア",
+	"in use":
+	"使用中",
+	"//src/popup/popup.js": true,
+	"All":
+	"すべて",
+	"To reflect some settings to tabs, you need to reload.":
+	"いくつかの設定は、タブをリロードするまで適用されません。",
+	"//expired": true,
+	"init":
+	"初期化",
+	"Favorites":
+	"お気に入り",
+	"Blocking IDs":
+	"ブロックID",
+	"Thread view":
+	"スレッド表示",
+	"Form":
+	"投稿フォーム",
+	"List Of boards":
+	"掲示板一覧",
+	"Basic":
+	"基本設定"
+}

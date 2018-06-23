@@ -1,0 +1,48 @@
+{
+	"name": "5ch.ext",
+	"version": "1.0.4",
+	"manifest_version": 2,
+	"description": "5ch.ext gives you easier to access to your favorites in 5ch.net and easier to read threads.",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"storage",
+		"clipboardWrite", "clipboardRead",
+		"https://*.5ch.net/*"
+	],
+	"icons": {
+		"16": "icons/5x_16.png",
+		"19": "icons/5x_19.png",
+		"48": "icons/5x_48.png",
+		"128": "icons/5x_128.png"
+	},
+	"browser_action": {
+		"default_icon": "icons/5x_19.png",
+		"default_title": "5ch.ext",
+		"default_popup": "popup/popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*.5ch.net/*",
+				"https://*.5ch.net/*"
+			],
+			"css": ["lib/switch.css", "content/content.css"],
+			"js": [
+				"lib/str.js", "lib/key.js",
+				"lib/jquery-3.2.1.min.js", "lib/baselib.js",
+				"lib/UnitScroll.js", "lib/navbar.js", "lib/switch.js", 
+				"lib/PopupBox.js", "lib/storage.js", "lib/colors.js", 
+				"lib/SettingTool.js", "lib/loading.js", "lib/wall.js", 
+				"storageData.js", "bookmarks.js", "blockList.js", 
+				"content/footerBar.js",
+				"content/bbsmenu.js", "content/subback.js", 
+				"content/PostTool.js", "content/MediaPopup.js",
+				"content/readcgi.js", "content/content.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"web_accessible_resources": ["locale/*.json", "cast_sender.js"]
+}

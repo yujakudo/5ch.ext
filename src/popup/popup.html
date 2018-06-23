@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>5ch.ext</title>
+<script src="../lib/str.js"></script>
+<script src="../lib/key.js"></script>
+<script src="../lib/baselib.js"></script>
+<script src="../lib/navbar.js"></script>
+<script src="../lib/storage.js"></script>
+<script src="../lib/jquery-3.2.1.min.js"></script>
+<script src="../lib/colors.js"></script>
+<script src="../lib/switch.js"></script>
+<script src="../lib/settingTool.js"></script>
+<script src="../storageData.js"></script>
+<script src="../settingsSchema.js"></script>
+<script src="../bookmarks.js"></script>
+<script src="../blockList.js"></script>
+<script src="../lib/PopupBox.js"></script>
+<script src="helpPopup.js"></script>
+<script src="popup.js"></script>
+<link rel="stylesheet" href="../lib/switch.css"/>
+<link rel="stylesheet" href="popup.css"/>
+</head>
+<body>
+	<div id="tab-pages">
+		<!-- bookmarks -->
+		<div data-tab="Favorites">
+			<div id="list_boards" class="list_fav"></div>
+			<div id="list_threads" class="list_fav"></div>
+			<button id="btn-unmark">Unmark selection</button>
+			<!-- <button id="btn-init">init</button> -->
+			<div class="help"><div>
+<p>The first list is a list of marked boards and boards containing marked or bookmarked threads.
+The following list is a list of marked and bookmarked threads.</p>
+<p>Click a board name to list threads on the board, then click a thread name to jump the thread.</p>
+<p>Icons are links to following pages:</p>
+<ul>
+	<li><span class="link">&Colon;</span> - To the list of boards,</li>
+	<li><span class="link">&apid;</span> - To a list of threads on a board,</li>
+	<li><span class="link sub">All.</span> - To a thread view of all posts,</li>
+	<li><span class="link sub">l50</span> - To a thread view of latest 50 posts,</li>
+	<li><span class="link">&gtrarr;</span> - To a thread view of posts after bookmark.</li>
+</ul>
+<p>Thread name is a link as same as <span class="link sub">All.</span> or <span class="link sub">l50</span> that is not displayed.</p>
+<p>Setting of 'Link to all posts' in 'List of threads' determines whether a link to each posts becomes an icon or a title.</p>
+			</div></div>
+		</div>
+		<!-- block list -->
+		<div data-tab="Blocking IDs">
+			<div class="align-center">
+				<button id="btn-remove">Remove selection</button>
+			</div>
+			<div>
+				<select id="list_userid" class="list_block" size="17" multiple></select>
+				<select id="list_forcedid" class="list_block" size="17" multiple></select>
+			</div>
+			<div class="buttons">
+				<button id="btn-clear-userid-list">Clear all IDs</button>
+				<button id="btn-clear-forcedid-list">Clear all ﾜｯﾁｮｲ</button>
+			</div>
+		</div>
+		<!-- setup -->
+		<div data-tab="Settings">
+			<div id="settings-select"></div>
+			<div id="settings-set"></div>
+		</div>
+	</div>
+	<div class="size-div"><span id="bookmarks-size"></span> in use</div>
+</body>
+</html>
