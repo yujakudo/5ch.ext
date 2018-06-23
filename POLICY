@@ -1,0 +1,94 @@
+Privacy Policy
+
+This documant explains how the extension(5ch.ext) use your data.
+
+1. Sites of the extension targeted
+Sites of the extension targeted are followings:
+- http://*.5ch.net and https://*.5ch.net
+
+The extension is not activated in other sites.
+
+2. Data collection and storage
+The extension collects and stores following data:
+- Accessed URL and date,
+- Data related to features,
+- Settings.
+
+Those are stored to only the local storage - the storage in your pc -.
+
+3. Data sending
+The extension never sent collecting data.
+
+4. Links
+The extension edits links like following but does not edit to completely different:
+- To skip the page that is just to jump to linked page,
+- To fix to links as intended by authors,
+- According to features, switches a part of URL or target tab.
+
+You can turn those editing on/off by settings.
+
+5. Access without clicking.
+The extension occasionally makes jump or access without clicking like followings:
+- To show preview when a link pointed,
+- To jump to links automatically at the page that is just to jump to linked page,
+- According to features, switches URL to redirect.
+
+You can turn those features on/off by settings.
+
+6. Notes about OSS
+The extension is open source software, so derived software might be.
+You need to see the appropriate policy by the distributor.
+
+7. Update of this policy
+This privacy policy may updated without advance notice.
+You can see modifications from the committed date of 'POLICY' at https://github.com/yujakudo/5ch.ext. 
+
+Last updated June 24, 2018.
+
+--
+プライバシーポリシー（日本語版）
+
+この文書は、拡張機能（5ch.ext）が利用者のデータをどう扱うかを示しています。
+
+1. 対象とするサイト
+この拡張機能は以下のサイトを対象とします。
+- http://*.5ch.net あるいは https://*.5ch.net
+
+この拡張機能がこれ以外のサイトで動作することはありません。
+
+2. データの収集と保存
+この拡張機能は以下のデータを収集し、保存します。
+- アクセスしたURLと時刻
+- 機能に関連したデータ,
+- 設定.
+
+これらは、ローカル(あなたのPCの中)にだけ保存されます。
+
+3. データの送信
+この拡張機能は収集したデータを送信することはありません。
+
+4. リンク
+この拡張機能は以下のようにリンクを編集します。しかし全く異なるリンクにするようなことはありません。
+- 単にリンク先に移動するだけのページをスキップする、
+- 投稿者が意図したようにリンクを修正する、
+- 機能に従って、URLの一部やページが開くタブを切り替える。
+
+これらの編集は、設定によってON/OFFができます。
+
+5. クリックのない場合のアクセス
+この拡張機能によって、クリックがない場合でも、以下のようなアクセスやページ遷移をすることがあります。
+- リンクを指し示したときにプレビューを表示する、
+- 単にリンク先に移動するだけのページにて、自動でリンク先に移動する、
+- 機能に従って、リダイレクト先のURLを切り替える。
+
+これらの機能は、設定によってON/OFFができます。
+
+6. OSSに関しての注意
+この拡張機能はオープンソースソフトウェアですので、派生ソフトウェアがあるかもしれません。
+配布元よる適切なポリシーを参照する必要があります。
+
+7. このポリシーの更新
+このプライバシーポリシーは、事前の告知なしに更新されることがあります。
+変更があったことは、https://github.com/yujakudo/5ch.ext にて'POLICY'のコミットの日付からわかります。
+
+最終更新：2018年6月24日
