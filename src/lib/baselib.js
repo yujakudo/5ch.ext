@@ -29,16 +29,6 @@ function setLocale(locale, callback) {
 		}
 	};
 	xhr.send();
-
-	var $script = $('<script type="application/json" src="'+url+'"></script>');
-	$('head').append($script);
-    $script[0].onload = function() {
-        if ( this.readyState === "complete" ) {
-			var data = JSON.parse(xhr.responseText);
-			yjd.str.setData(locale, data);
-			callback(locale);
-		}
-    };
 }
 
  /**
