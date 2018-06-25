@@ -781,7 +781,7 @@ function readcgi(){
 	 * @return {string} color expression 
 	 */
 	function str2color(str) {
-		if(!str) return 'hsl(0,0%,0%)';
+		if(!str) return 'none';
 		//	get bits for all string
 		var bits = '';
 		for(var i=0; i<str.length; i++) {

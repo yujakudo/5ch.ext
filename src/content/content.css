@@ -219,6 +219,7 @@ ul.posttool {
 	left: 0;
 	list-style: none;
 	z-index: 20;
+	min-width: 8rem;
 }
 .posttool li, .pagetool li
  {

@@ -94,11 +94,11 @@ PostTool.prototype.openBox = function(event, post) {
 	if(!post) return;
 	if(!post.blocked) {
 		block_text = 'Block ';
-		$('li.sw_bookmark', this.$elm).removeClass('hidden');
 		if((post.next && post.next.length) || (post.prev && post.prev.length)) {
 			$('li.tree_view', this.$elm).removeClass('hidden');
 		}
-		if(post.userid)	{
+		if(post.userid && post.userid!=='0')	{
+			$('li.sw_bookmark', this.$elm).removeClass('hidden');
 			$('li.list_userid', this.$elm).removeClass('hidden');
 		}
 		if(post.forcedid) {
@@ -115,7 +115,7 @@ PostTool.prototype.openBox = function(event, post) {
 
 	$('li.list_userid', this.$elm).text(__('List %%').fill(post.userid));
 	$('li.list_forcedid', this.$elm).text(__('List %%').fill(post.forcedid));
-	if(post.userid)	{
+	if(post.userid && post.userid!=='0')	{
 		var block_text = (this.blockList.isblocked('userid', post.userid))? __('UnBlock %%'): __('Block %%');
 		$('li.block_userid', this.$elm)
 		.removeClass('hidden').text(block_text.fill(post.userid));
