@@ -71,6 +71,7 @@ var InitialData = {
 				autoplay: true,
 				delay: 200,
 				defaultAttach: 'top',
+				tapOpen: true,
 			},
 		},
 		subback: {

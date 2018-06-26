@@ -200,6 +200,14 @@
 	"",
 	" Or decrease if you feel annoyance for delay of the popup.":
 	"",
+	"Opens when tapping":
+	"",
+	"Opens the popup immediately when tapping.":
+	"",
+	"Turn this on if you use touch panel and want to preview when first tapping the link.":
+	"",
+	" Otherwise jumps to the link when tapping.":
+	"",
 	"List of threads view (subback.html)":
 	"",
 	"Enables the extension on the list of threads.":
@@ -520,13 +528,15 @@
 	"",
 	"Initialize":
 	"",
-	"When you click 'export', storage data - favorites, blocking IDs, and settings - are downloaded.":
+	"When you click 'export', storage data - favorites, blocking IDs, and settings - are downloaded from local storage.":
 	"",
 	"When you click 'import' and select a file, storage data are cleared, then the file data are imported.":
 	"",
 	"When you unlock and click 'Initialize', storage data are cleared and initialized.":
 	"",
 	"So exporting before importing or initializing are recommended.":
+	"",
+	"Informations":
 	"",
 	"License":
 	"",
@@ -544,6 +554,8 @@
 	"All":
 	"",
 	"//expired": true,
+	"When you click 'export', storage data - favorites, blocking IDs, and settings - are downloaded.":
+	"",
 	"init":
 	"",
 	"Favorites":

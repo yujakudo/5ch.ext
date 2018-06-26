@@ -196,7 +196,8 @@ function readcgi(){
 				footerHeight: footerBar.unitScroll.options.footerHeight,
 			});
 			//	when cursor enter link,
-			$base.on('mouseenter', selector, function(event) {
+			var touch_entered = null;
+			$base.on('mouseenter touchend', selector, function(event) {
 				//	parse url and call enter if it may url to media
 				var url = $(this).attr('href');
 				var info = extractUrl(url);
@@ -207,7 +208,24 @@ function readcgi(){
 					}
 				}
 				var minfo = mediaPopup.getMediaInfo(url);
-				if(minfo.enable) mediaPopup.enter(event, minfo);
+				if(minfo.enable) {
+					if(settings.media.tapOpen && event.type==='touchend') {
+						if(touch_entered!==this) {
+							event.preventDefault();
+							event.stopPropagation();
+							mediaPopup.open(event, minfo);
+							touch_entered = this;
+						}
+					} else {
+						mediaPopup.enter(event, minfo);
+					}
+				}
+			});
+			$base.on('touchend', function(event) {
+				if(touch_entered) {
+					mediaPopup.close(event);
+					touch_entered = null;
+				}
 			});
 			$base.on('mouseleave', selector, function(event) {
 				mediaPopup.leave(event);

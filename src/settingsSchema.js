@@ -259,6 +259,14 @@ var ThreadViewSchema = {
 					+__(" Increase if you feel annoyance for the popup when the cursor passes a link, or unintended close of the popup when moving the cursor from the link to the popup.")
 					+__(" Or decrease if you feel annoyance for delay of the popup.")
 				},
+				{
+					path: 'settings.readcgi.media.tapOpen',
+					label: __('Opens when tapping'),
+					type: 'switch',
+					help: __("Opens the popup immediately when tapping.")
+					+'\r\n'+__("Turn this on if you use touch panel and want to preview when first tapping the link.")
+					+__(" Otherwise jumps to the link when tapping.")
+				},
 			],
 		},
 	]

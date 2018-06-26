@@ -162,10 +162,26 @@ function bind() {
 	});
 	//	help
 	helpPopup = new HelpPopup('body');
-	$('body').on('mouseenter', '*[data-help], .help', function(event){
-		helpPopup.enter(event);
+	var touch_entered = null;
+	$('body').on('mouseenter touchend', '*[data-help], .help', function(event){
+		if(event.type==='touchend') {
+			if(touch_entered!==this) {
+				event.preventDefault();
+				event.stopPropagation();
+				helpPopup.open(event);
+				touch_entered = this;
+			}
+		} else {
+			helpPopup.enter(event);
+		}
 	});
-	$('body').on('mouseleave', '*[data-help], .help', function(event){
+	$('body').on('touchend', function(event) {
+		if(touch_entered) {
+			helpPopup.close(event);
+			touch_entered = null;
+		}
+	});
+$('body').on('mouseleave', '*[data-help], .help', function(event){
 		helpPopup.leave(event);
 	});
 	//	Extra
