@@ -30,7 +30,7 @@
 			],
 			"css": ["lib/switch.css", "content/content.css"],
 			"js": [
-				"browserApi.js", "lib/str.js", "lib/key.js",
+				"lib/str.js", "lib/key.js",
 				"lib/jquery-3.2.1.min.js", "lib/baselib.js",
 				"lib/UnitScroll.js", "lib/navbar.js", "lib/switch.js", 
 				"lib/PopupBox.js", "lib/storage.js", "lib/colors.js", 

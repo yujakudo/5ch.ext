@@ -1,0 +1,563 @@
+{
+	"//src/settingsSchema.js": true,
+	"Thread view (read.cgi)":
+	"",
+	"Enable":
+	"",
+	"Enables the extension on the thread view.":
+	"",
+	"Turn this off if you want the extension not to work on the thread view.":
+	"",
+	"General":
+	"",
+	"Enable popup menu":
+	"",
+	"Enables popup menu.":
+	"",
+	"If turn this on, opens a popup menu when an icon at right top of each posts pointed.":
+	"",
+	"Enable meta controls":
+	"",
+	"Enables controls on meta information area of each posts.":
+	"",
+	"If turn this on, you can do same things as the popup menu item by clicking information of posts.":
+	"",
+	"<ul><li>Clicking forced ID(ﾜｯﾁｮｲ) or ID, A list of posts by that ID arises. </li>":
+	"<ul><li></li>",
+	"<li>Clicking '&clubs;', A tree view arises.</li></ul>":
+	"<li></li></ul>",
+	"Colors ID and ﾜｯﾁｮｲ":
+	"",
+	"Colors ID and ﾜｯﾁｮｲ as it's value":
+	"",
+	"Extend CSS":
+	"",
+	"Applies CSS to remove unnecessary spaces.":
+	"",
+	"Blocking duration":
+	"",
+	"Duration in day to keep blocking of specified user ID.":
+	"",
+	"When this duration expires, the ID is automatically unblocked.":
+	"",
+	" Set 0 not to unblock automatically.":
+	"",
+	"Animation":
+	"",
+	"Animation where posts and the form slide.":
+	"",
+	"Durtion":
+	"",
+	"Duration of the animation in millisecond.":
+	"",
+	"Set 0 not to animating.":
+	"",
+	"Hides blocked post":
+	"",
+	"Hides blocked posts completely.":
+	"",
+	"If you turn this off, hides only the message of blocked posts and add 'あぼ～ん' to the head of user name.":
+	"",
+	"Min. post width":
+	"",
+	"Minimum width in pixel of each post.":
+	"",
+	"In the treeview, width of post becomes narrower as it’s indent, but does not become narrower than this width.":
+	"",
+	"Links":
+	"",
+	"Correction":
+	"",
+	"Corrects broken or immature URLs.":
+	"",
+	"URL cut at '&' are connected.":
+	"",
+	" Strings not recognized as URL because of starting by 'ttp' or including a full width character are made as link.":
+	"",
+	"Opens link in new tab":
+	"",
+	"Opens a linked external page in new tab.":
+	"",
+	"If you turn this off, linked pages are opened in the existing tab,":
+	"",
+	" but you can open a link in new tab by clicking with Ctrl key.":
+	"",
+	"Disable anchor as link":
+	"",
+	" Does not jump new page when clicking an anchor that refers a post.":
+	"",
+	"Instead of new page, tries to scroll to the post referred.":
+	"",
+	"Direct link":
+	"",
+	"When clicking a link, skips https://jump.5ch.net and jumps to linked page directly.":
+	"",
+	"Auto jump":
+	"",
+	"Automatically jumps to another site without clicking a link at https://jump.2h.net.":
+	"",
+	"Post form":
+	"",
+	"Always 'sage'":
+	"",
+	"Automatically fills an email field with 'sage'.":
+	"",
+	"Jump to same posts":
+	"",
+	"After posting, jumps to the thread view from the first post currently shown.":
+	"",
+	"Turn this off to jump to the view of the latest 50 posts.":
+	"",
+	"Max. width":
+	"",
+	"Maximum width of the form in pixel":
+	"",
+	"Increase if you feel that the post form is narrow.":
+	"",
+	"Small name field":
+	"",
+	"Makes name and email field small for height of the post form to be lower.":
+	"",
+	"It works better with the following sliding form.":
+	"",
+	"Sliding form":
+	"",
+	"Makes the post form slide to bottom of a post when clicking a post number instead of 'Quick reply'.":
+	"",
+	"Quotation symbol":
+	"",
+	"A symbol of the beginning of a quoted sentences.":
+	"",
+	"If you want to quote, select sentences before clicking a post number.":
+	"",
+	"Media popup":
+	"",
+	"Media - image, video or audio - is pop up and you can preview when pointing those link.":
+	"",
+	"Media of youtube.com and imgur.com are shown in an embedded frame.":
+	"",
+	"Initial width":
+	"",
+	"Initial width of the popup in pixel.":
+	"",
+	"Actual size of the popup is modified by 'Size adjustment'.":
+	"",
+	" But size of embedded frames cannot be controlled.":
+	"",
+	" Youtube keeps initial size and Imgur keeps only initial width.":
+	"",
+	"Initial height":
+	"",
+	"Initial height of the popup in pixel. See the help of 'Initial width' for more.":
+	"",
+	"Size adjustment":
+	"",
+	"Full":
+	"",
+	"Stretch":
+	"",
+	"Inside":
+	"",
+	"Type of modification of size of the popup for media that is not an embedded frames.":
+	"",
+	"<ul><li>'Inside' keeps media size not to go out of initial size.</li>":
+	"<ul><li></li>",
+	"<li>'Stretch' keeps the length of one side and stretches the other side when media goes out of the initial size.</li>":
+	"<li></li>",
+	"<li>'Full' stretches both side but keeps not to go out of the window.</li>":
+	"<li></li>",
+	"</ul>Any type might reduce media size but does not expands.":
+	"</ul>",
+	"Initial side to attach":
+	"",
+	"Top":
+	"",
+	"Bottom":
+	"",
+	"Right":
+	"",
+	"A side of a link where the popup opens initialy.":
+	"",
+	"In spite of this setting, changes a side to try not to hide the link as possible.":
+	"",
+	" If you feel annoyance for movement of the popup when loading, 'Right' is recommended.":
+	"",
+	" Even though 'Right' is selected, An audio control opens on the top or bottom side of the link.":
+	"",
+	"Auto play":
+	"",
+	"Automatically starts playing when popped up.":
+	"",
+	"Even though you turned this on, you might start playing manually according to the browser's policy.":
+	"",
+	"Popup delay":
+	"",
+	"Delay in millisecond from when a link is pointed to when the popup open.":
+	"",
+	"It is also delay from when the cursor leave the link or the popup to when the popup close.":
+	"",
+	" Increase if you feel annoyance for the popup when the cursor passes a link, or unintended close of the popup when moving the cursor from the link to the popup.":
+	"",
+	" Or decrease if you feel annoyance for delay of the popup.":
+	"",
+	"List of threads view (subback.html)":
+	"",
+	"Enables the extension on the list of threads.":
+	"",
+	"Turn this off if you want the extension not to work the list of threads.":
+	"",
+	"Default order":
+	"",
+	"Original":
+	"",
+	"Title":
+	"",
+	"Post count":
+	"",
+	"Default order of threads.":
+	"",
+	"<ul><li>'Original': In original order.</li>":
+	"<ul><li></li>",
+	"<li>'Title': Sorted by title.</li>":
+	"<li></li>",
+	"<li>'Post count': In order of number of posts</li></ul>":
+	"<li></li></ul>",
+	"Opens in existing tab":
+	"",
+	"Opens thread view in existing tab.":
+	"",
+	"You can also open in new tab by clicking with Ctrl key.":
+	"",
+	" If you turn this off, opens in new tab.":
+	"",
+	"Link to all posts":
+	"",
+	"Links thread title to all posts view.":
+	"",
+	"If you turn this off, links to latest 50 posts view.":
+	"",
+	" In any case, you can open the other view by clicking number above the title or number of posts below the title.":
+	"",
+	"List of boards (bbstable.html)":
+	"",
+	"Enables the extension on the list of boards.":
+	"",
+	"Turn this off if you want the extension not to work on the list of boards.":
+	"",
+	"Shows link on existing tab":
+	"",
+	"Opens the board page in existing tab.":
+	"",
+	"Link to list of thread":
+	"",
+	"Links board title to list of thread.":
+	"",
+	" If you turn this off, links to the top page of the board.":
+	"",
+	"Footer toolbar":
+	"",
+	"Shows the footer toolbar at the bottom of the window.":
+	"",
+	"It still works even if you set to hide.":
+	"",
+	" Disable each view If you want the bar to be turned off completely.":
+	"",
+	"Show":
+	"",
+	"Hide":
+	"",
+	"Visibility of the footer tool bar.":
+	"",
+	"Scroll animation":
+	"",
+	"Animates when the page scrolls by a button or key.":
+	"",
+	"Shortcut keys":
+	"",
+	"Shortcut keys of buttons in the toolbar.":
+	"",
+	"To set keys, focus each field and press a key with/without modification key - Shift, Ctrl, Command, Alt, Meta - as you like.":
+	"",
+	" To reset, press Escape key. So Escape key can not be assigned.":
+	"",
+	" To use Ctrl key for modification is not recomended because it might be assinged by the browser.":
+	"",
+	"Scroll to an upper item":
+	"",
+	"Scroll to a lower item":
+	"",
+	"Scroll to upper hidden items":
+	"",
+	"Scroll to lower hidden items":
+	"",
+	"Scroll to top":
+	"",
+	"Scroll to bottom":
+	"",
+	"Scroll to a previous item":
+	"",
+	"Scroll to a next item":
+	"",
+	"Scroll to bookmark":
+	"",
+	"Jump to list of boards":
+	"",
+	"Jump to list of threads":
+	"",
+	"Get all posts":
+	"",
+	"Update the page":
+	"",
+	"Update from the last post":
+	"",
+	"Update from the bookmark":
+	"",
+	"Vertical lines":
+	"",
+	"Settings for vertical lines in list of threads and list of boards view.":
+	"",
+	"Half width to fill":
+	"",
+	"Converts half width kana to full width katakana.":
+	"",
+	"Half width kana will not be upright in mixed orientation.":
+	"",
+	"To ASCII":
+	"",
+	"Converts characters to ASCII as possible.":
+	"",
+	"It makes a title shorter a little.":
+	"",
+	"Text orientation":
+	"",
+	"Mixed":
+	"",
+	"Upright":
+	"",
+	"Sideways":
+	"",
+	"Text orientation.":
+	"",
+	"<ul><li>'Mixed': Upright and sideways texts are mixed.":
+	"<ul><li>",
+	" Japanese will be upright, and English will be sideways.</li>":
+	"</li>",
+	"<li>'Upright': All texts are upright.</li>":
+	"<li></li>",
+	"<li>'Sideways': All texts are sideways.</li></ul>":
+	"<li></li></ul>",
+	"If you set this to 'Sideways', It is better to set following 'Combination for upright' to 'Off' and clear 'Combined terms'.":
+	"",
+	"Combination for upright":
+	"",
+	"Off":
+	"",
+	"-1-":
+	"",
+	"-2-":
+	"",
+	"-3-":
+	"",
+	"-4-":
+	"",
+	"Number of characters to be combined and made upright.":
+	"",
+	"Combined terms":
+	"",
+	"Terms combined and made upright in spite of 'Combination for upright' settings.":
+	"",
+	"Separate by '|' for more than a term. '.', '&#92;w' and '&#92;d' can be used for wildcards, but '&#92;.' must be used instead of '.'.":
+	"",
+	" Actualy, you can use regular expression.":
+	"",
+	"Delay from resizing":
+	"",
+	"Delay in millisecond from window resizing to relayout.":
+	"",
+	"Delay is necessary to prevent frequent relayout during drag.":
+	"",
+	" Increase if you feel annoyance for frequent relayout during drag.":
+	"",
+	" Or, decrease if you feel annoyance for delay when maximizing or normalizing window size.":
+	"",
+	"Basic settings":
+	"",
+	"Language":
+	"",
+	"Auto":
+	"",
+	"Japanese":
+	"",
+	"Enable the extension":
+	"",
+	"Enables the extension.":
+	"",
+	"Turn this off if you want the extension not to work on all pages.":
+	"",
+	"//src/content/bbsmenu.js": true,
+	"%num% boards are there. Ext took %time% msec to prepare.":
+	"%num%%time%",
+	"//src/content/footerBar.js": true,
+	"List of boards":
+	"",
+	"List of threads":
+	"",
+	"All posts":
+	"",
+	"Update":
+	"",
+	"Update from last":
+	"",
+	"Settings":
+	"",
+	"Scroll to the bookmark":
+	"",
+	"Scroll to a previous post":
+	"",
+	"Scroll to a next post":
+	"",
+	"//src/content/mediaPopup.js": true,
+	"Load error":
+	"",
+	"//src/content/PostTool.js": true,
+	"Tree view":
+	"",
+	"Copy":
+	"",
+	"Unbookmark":
+	"",
+	"Bookmark":
+	"",
+	"List %%":
+	"%%",
+	"UnBlock %%":
+	"%%",
+	"Block %%":
+	"%%",
+	"//src/content/readcgi.js": true,
+	"%num% posts are there. The Ext. took %time% msec to prepare.":
+	"%num%%time%",
+	"%id% posted %num% .":
+	"%id%%num%",
+	"%% ancestors, ":
+	"%%",
+	"%% siblings, ":
+	"%%",
+	"%% children, ":
+	"%%",
+	"%% grandchildren, ":
+	"%%",
+	"the post has.":
+	"",
+	"Copy the post #%%":
+	"%%",
+	"Mark the thread":
+	"",
+	"Add the thread to favorites. The thread becomes more accessible.":
+	"",
+	"//src/content/subback.js": true,
+	"%num% threads are there. The Ext. took %time% msec to prepare.":
+	"%num%%time%",
+	"Mark the board":
+	"",
+	"Add the board to favorites. The board becomes more accessible.":
+	"",
+	"Order":
+	"",
+	"Order of threads.":
+	"",
+	"If you mark the board, this setting is stored.":
+	"",
+	"//src/lib/UnitScroll.js": true,
+	"//src/popup/popup.html": true,
+	"Unmark selection":
+	"",
+	"The first list is a list of marked boards and boards containing marked or bookmarked threads.\nThe following list is a list of marked and bookmarked threads.":
+	"",
+	"Click a board name to list threads on the board, then click a thread name to jump the thread.":
+	"",
+	"Icons are links to following pages:":
+	"",
+	"- To the list of boards,":
+	"",
+	"- To a list of threads on a board,":
+	"",
+	"All.":
+	"",
+	"- To a thread view of all posts,":
+	"",
+	"l50":
+	"",
+	"- To a thread view of latest 50 posts,":
+	"",
+	"- To a thread view of posts after bookmark.":
+	"",
+	"Thread name is a link as same as":
+	"",
+	"or":
+	"",
+	"that is not displayed.":
+	"",
+	"Setting of 'Link to all posts' in 'List of threads' determines whether a link to each posts becomes an icon or a title.":
+	"",
+	"Remove selection":
+	"",
+	"Clear all IDs":
+	"",
+	"Clear all ﾜｯﾁｮｲ":
+	"",
+	"To reflect some settings to tabs, you need to reload.":
+	"",
+	"To reflect language setting to this popup, you need to reopen.":
+	"",
+	"Storage data handling":
+	"",
+	"Export":
+	"",
+	"Import":
+	"",
+	"Unlock to initialize":
+	"",
+	"Initialize":
+	"",
+	"When you click 'export', storage data - favorites, blocking IDs, and settings - are downloaded.":
+	"",
+	"When you click 'import' and select a file, storage data are cleared, then the file data are imported.":
+	"",
+	"When you unlock and click 'Initialize', storage data are cleared and initialized.":
+	"",
+	"So exporting before importing or initializing are recommended.":
+	"",
+	"License":
+	"",
+	"Privacy policy":
+	"",
+	"in use":
+	"",
+	"//src/popup/popup.js": true,
+	"This file is not exported.":
+	"",
+	"File data are imported.":
+	"",
+	"Storage data are initialized.":
+	"",
+	"All":
+	"",
+	"//expired": true,
+	"init":
+	"",
+	"Favorites":
+	"",
+	"Blocking IDs":
+	"",
+	"Extra":
+	"",
+	"Thread view":
+	"",
+	"Form":
+	"",
+	"List Of boards":
+	"",
+	"Basic":
+	""
+}
