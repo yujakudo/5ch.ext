@@ -200,6 +200,14 @@
 	"カーソルがリンクを通過しただけでポップアップが開くことが気になる場合、あるいはリンクからポップアップにカーソルを移動しようとして意図せずポップアップが閉じる場合は、この値を増やしてください。",
 	" Or decrease if you feel annoyance for delay of the popup.":
 	"また、ポップアップの遅延時間が気になる場合は、この値を減らしてください。",
+	"Opens when tapping":
+	"タップ時に開く",
+	"Opens the popup immediately when tapping.":
+	"タップしたときにすぐにポップアップを開きます。",
+	"Turn this on if you use touch panel and want to preview when first tapping the link.":
+	"もしタッチパネルを利用しており、最初のタップでプレビューをしたい場合は、これをONにしてください。",
+	" Otherwise jumps to the link when tapping.":
+	"OFFにした場合は、タップでリンク先のページが開きます。",
 	"List of threads view (subback.html)":
 	"スレッド一覧 (subback.html)",
 	"Enables the extension on the list of threads.":
@@ -482,8 +490,12 @@
 	" - 掲示板一覧",
 	"- To a list of threads on a board,":
 	" - スレッド一覧",
+	"All.":
+	"",
 	"- To a thread view of all posts,":
 	" - スレッド表示：すべての投稿",
+	"l50":
+	"",
 	"- To a thread view of latest 50 posts,":
 	" - スレッド表示：最新50投稿",
 	"- To a thread view of posts after bookmark.":
@@ -542,6 +554,8 @@
 	"All":
 	"すべて",
 	"//expired": true,
+	"When you click 'export', storage data - favorites, blocking IDs, and settings - are downloaded.":
+	"",
 	"init":
 	"初期化",
 	"Favorites":
