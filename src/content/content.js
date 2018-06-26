@@ -80,7 +80,7 @@ if(pageInfo.id!=Page.UNKNOWN) {
 		if(info.path && !storage.get(info.path+'.enable')) return;
 		//	set additional data to pageInfo.
 		pageInfo.date = Date.now();
-		pageInfo.title = $('title').text();
+		pageInfo.title = $('title').text().trim();
 		if(pageInfo.id==Page.THREADS) {
 			var pos = pageInfo.title.indexOf('＠');
 			if(pos) pageInfo.title = pageInfo.title.substr(0,pos);
@@ -92,8 +92,10 @@ if(pageInfo.id!=Page.UNKNOWN) {
 		}
 		wall = new Wall(true, true);
 		//	locale
-		var locale = storage.get('settings.language');
-		setLocale(locale, function(){
+		new Promise(function(resolve, reject) {
+			var locale = storage.get('settings.language');
+			setLocale(locale, resolve);
+		}).then(function(){
 			//	bookmarks.
 			bookmarks = new Bookmarks(storage, 'bookmarks');
 			//	footer toolbar

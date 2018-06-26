@@ -10,7 +10,7 @@ var regex_tag = /<[^>]+>|%[a-zA-Z_-]*%|\\[a-z]/g;
 var src_dir = 'src';
 var dest_dir = 'src/locale';
 var tmplt_fn = 'template.json';
-var tmplt_path = dest_dir + '/' + tmplt_fn;
+var tmplt_path = 'temp/' + tmplt_fn;
 var new_tmplt = {};
 var old_tmplt = {};
 if(fs.existsSync(tmplt_path)) {

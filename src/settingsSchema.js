@@ -239,7 +239,7 @@ var ThreadViewSchema = {
 					],
 					help: __("A side of a link where the popup opens initialy.")
 					+'\r\n'+__("In spite of this setting, changes a side to try not to hide the link as possible.")
-					+__(" If you annoy movement of the popup when loading, 'Right' is recommended.")
+					+__(" If you feel annoyance for movement of the popup when loading, 'Right' is recommended.")
 					+__(" Even though 'Right' is selected, An audio control opens on the top or bottom side of the link.")
 				},
 				{
@@ -522,8 +522,8 @@ var VerticalLinesSchema = {
 			range:[100, 2000],
 			help: __("Delay in millisecond from window resizing to relayout.")
 			+'\r\n'+__("Delay is necessary to prevent frequent relayout during drag.")
-			+__(" Increase if you annoy frequent relayout during drag.")
-			+__(" Or, decrease if you annoy delay when maximize or normalize window.")
+			+__(" Increase if you feel annoyance for frequent relayout during drag.")
+			+__(" Or, decrease if you feel annoyance for delay when maximizing or normalizing window size.")
 		},
 	],
 };

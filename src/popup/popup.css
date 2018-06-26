@@ -419,3 +419,38 @@ span.tab-index.tabs-selected {
 	color: #222;
 	background-image: none;
 }
+div[data-tab="Settings"] .help {
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+}
+
+/* Extra */
+div[data-tab="Extra"] h2 {
+	margin: 1rem 0 .5rem;
+}
+div[data-tab="Extra"] h2:first-child {
+	margin-top: 0;
+}
+.justify {
+	display: flex;
+	margin-bottom: 1rem;
+}
+.justify>*:nth-child(2) {
+	flex-grow: 2;
+	text-align: center;
+}
+div.message-div {
+	margin-top: 0.5rem;
+}
+div.message-div .help {
+	display: inline-block;
+}
+#extra-message {
+	display: inline-block;
+	width: calc(100% - 1.4rem);
+	height: 1.2rem;
+	white-space: nowrap;
+	overflow: hidden;
+	color: #505080;
+}

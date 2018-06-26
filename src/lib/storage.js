@@ -19,10 +19,9 @@ var Storage = function(type, initialData, callback, errCallback) {
 	this.type = type;
 	this.initialData = initialData;
 	this.dataKeys = Object.keys(initialData);
-	this.data = {};
 	this.errCallback = errCallback;
 	this.saving = false;
-	Storage.extend(this.data, initialData);
+	this.initData();
 	this.load(callback, true);
 };
 
@@ -40,6 +39,16 @@ Storage.getByPath = function(path, obj) {
 		ret = ret[path[i]];
 	}
 	return ret;
+};
+
+/**
+ * Initialize Data.
+ * @param {object} [data] data to over write;
+ */
+Storage.prototype.initData = function(data) {
+	this.data = {};
+	Storage.extend(this.data, this.initialData);
+	if(data) Storage.overWrite(this.data, data);
 };
 
 /**

@@ -58,10 +58,18 @@ new Promise((resolve, rejet)=>{
 function initWindow() {
 	if(!tabs) tabs = $('#tab-pages').makeTab();
 	localize('body');
+	bind();
+	initView();
+}
+
+/**
+ * Initialize all View.
+ */
+function initView() {
 	makeBlockLists();
 	makeFavoritesLists();
+	settingTool = null;
 	updateInUse();
-	bind();
 }
 
 /**
@@ -85,9 +93,9 @@ function localize(exp) {
  */
 function bind() {
 	var cur_bid = '';
-	$('#btn-init').click(function() {
-		localize('body');
-	});
+	// $('#btn-init').click(function() {
+	// 	localize('body');
+	// });
 	//	Favorites
 	$('#list_boards,#list_threads').on('click', '.link', function(){
 		var url = $(this).attr('title');
@@ -160,11 +168,79 @@ function bind() {
 	$('body').on('mouseleave', '*[data-help], .help', function(event){
 		helpPopup.leave(event);
 	});
+	//	Extra
+	$('#btn-export').click(()=>{
+		message();
+		var data = storage.get();
+		if('pageInfo' in data )delete data.pageInfo;
+		if('timestamp' in data )delete data.timestamp;
+		data = JSON.stringify(data, null, '\t');
+		var a = $('#btn-export+a')[0];
+		a.href = URL.createObjectURL(new Blob([data], {type: 'application/json'}));
+		a.click();
+	});
+	var reader = null;
+	$('#btn-import').click(()=>{
+		message();
+		if(reader) return;
+		$('#btn-import+input').click();
+	});
+	$('#btn-import+input').change(function() {
+		if(this.files.length<1) return;
+		var file = this.files[0];
+		reader = new FileReader();
+		var _this = this;
+		reader.onload = importFile;
+		reader.readAsText(file);
+	});
+	$('#chk-init').change(function() {
+		message();
+		if($(this).prop('checked')) {
+			$('#chk-init~button').removeAttr('disabled');
+		} else {
+			$('#chk-init~button').attr('disabled', 'disabled');
+		}
+	});
+	$('#chk-init~button').click(initStorage);
+	$('a[href]').click(function(event) {
+		jump(this.href);
+		event.preventDefault();
+		return false;
+	});
 	//
 	function jump(url) {
 		chrome.tabs.getCurrent(function(tab) {
 			chrome.tabs.update(tab, {url: url});
 		});
+	}
+	function importFile() {
+		var data = reader.result;
+		try {
+			data = JSON.parse(data);
+			for(var i=0; i<storage.dataKeys; i++) {
+				if(storage.dataKeys[i] in data) break;
+			}
+			if(i==storage.dataKeys.length) throw null;
+		} catch(e) {
+			message(__("This file is not exported."));
+			return;
+		}
+		initStorage(null, data);
+		message(__("File data are imported."));
+		reader = null;
+	}
+	function initStorage(event, data) {
+		storage.initData(data);
+		storage.save();
+		initView();
+		message(__("Storage data are initialized."));
+		cur_bid = '';
+		$('#chk-init').prop('checked', false);
+		$('#chk-init~button').attr('disabled', 'disabled');
+	}
+	function message(text) {
+		if(text===undefined) text = '';
+		$('#extra-message').text(text);
 	}
 }
 
@@ -284,6 +360,10 @@ function makeBlockLists() {
 }
 
 //	Settings
+
+/**
+ * Render settings tab.
+ */
 function renderSettings() {
 	settingTool = new SettingTool({
 		schema: getSettingsSchema(),
@@ -312,13 +392,18 @@ function renderSettings() {
 		);
 	});
 	settingsCallback(storage.get('settings.enable'), 'settings.enable', true);
-	help = __("To reflect some settings to tabs, you need to reload.")
-	$('#settings-select').append('<span class="help" data-help="'+help+'"></span>');
 }
 
+/**
+ * Callback caled when change any setting.
+ * Changes tab apareance, then saves.
+ * @param {*} value Value of the setting.
+ * @param {string} path Path of the storage data. 
+ * @param {boolean} b_init Set true when initialize. 
+ */
 function settingsCallback(value, path, b_init) {
 	if(path==='settings.enable') {
-		$('#settings-set').children('.setting-item').each(function(){
+		$('#settings-set').children('.setting-item:not(.export)').each(function(){
 			if(this.id==='settings-basic') return;
 			if(value) {
 				$(this).removeClass('disabled');
@@ -326,7 +411,7 @@ function settingsCallback(value, path, b_init) {
 				$(this).addClass('disabled');
 			}
 		});
-		$('#settings-select').children('*').each(function(){
+		$('#settings-select').children('*:not(.export)').each(function(){
 			var id = $(this).attr('data-id');
 			if(!id || id==='settings-basic') return;
 			if(value) {

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"> 
 <title>5ch.ext</title>
+<script src="../browserApi.js"></script>
 <script src="../lib/str.js"></script>
 <script src="../lib/key.js"></script>
 <script src="../lib/baselib.js"></script>
@@ -64,6 +65,35 @@ The following list is a list of marked and bookmarked threads.</p>
 		<div data-tab="Settings">
 			<div id="settings-select"></div>
 			<div id="settings-set"></div>
+			<div class="help"><div>
+<p>To reflect some settings to tabs, you need to reload.</p>
+<p>To reflect language setting to this popup, you need to reopen.</p>
+			</div></div>
+		</div>
+		<div data-tab="Extra">
+			<h2>Storage data handling</h2>
+			<div id="data-handles" class="justify">
+				<div><button id="btn-export">Export</button><a class="hidden" download="5ch_ext.json"></a></div>
+				<div><button id="btn-import">Import</button><input class="hidden" type="file"/></div>
+				<div>
+					<input id="chk-init" type="checkbox"/>Unlock to initialize
+					<button disabled>Initialize</button>
+				</div>
+			</div>
+			<div class="message-div">
+				<div id="extra-message"></div>
+				<div class="help"><div>
+<p>When you click 'export', storage data - favorites, blocking IDs, and settings - are downloaded from local storage.</p>
+<p>When you click 'import' and select a file, storage data are cleared, then the file data are imported.</p>
+<p>When you unlock and click 'Initialize', storage data are cleared and initialized.</p>
+<p>So exporting before importing or initializing are recommended.</p>
+				</div></div>
+			</div>
+			<h2>Informations</h2>
+			<div id="links" class="justify">
+				<div><a href="https://github.com/yujakudo/5ch.ext/blob/master/LICENSE">License</a></button></div>
+				<div><a href="https://github.com/yujakudo/5ch.ext/blob/master/POLICY">Privacy policy</a></div>
+			</div>
 		</div>
 	</div>
 	<div class="size-div"><span id="bookmarks-size"></span> in use</div>

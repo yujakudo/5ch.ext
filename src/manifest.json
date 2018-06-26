@@ -1,6 +1,6 @@
 {
 	"name": "5ch.ext",
-	"version": "1.0.5",
+	"version": "1.1.0",
 	"manifest_version": 2,
 	"description": "5ch.ext gives you easier to access to your favorites in 5ch.net and easier to read threads.",
 	"background": {
@@ -30,7 +30,7 @@
 			],
 			"css": ["lib/switch.css", "content/content.css"],
 			"js": [
-				"lib/str.js", "lib/key.js",
+				"browserApi.js", "lib/str.js", "lib/key.js",
 				"lib/jquery-3.2.1.min.js", "lib/baselib.js",
 				"lib/UnitScroll.js", "lib/navbar.js", "lib/switch.js", 
 				"lib/PopupBox.js", "lib/storage.js", "lib/colors.js", 

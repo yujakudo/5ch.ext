@@ -180,7 +180,7 @@
 	"最初にポップアップがリンクのどの方向に開くかを指定します。",
 	"In spite of this setting, changes a side to try not to hide the link as possible.":
 	"この指定に関わらず、ポップアップの開く方向はなるべくリンクを隠さないように変化します。",
-	" If you annoy movement of the popup when loading, 'Right' is recommended.":
+	" If you feel annoyance for movement of the popup when loading, 'Right' is recommended.":
 	"もしロード中のポップアップの移動が気になる場合は、「右」にすることをお勧めします。",
 	" Even though 'Right' is selected, An audio control opens on the top or bottom side of the link.":
 	"「右」を指定した場合でも、オーディオのコントロールは常にリンクの上か下に開きます。",
@@ -376,9 +376,9 @@
 	"ウィンドウのサイズ変更から、レイアウト更新までの遅延時間をミリ秒で指定します。",
 	"Delay is necessary to prevent frequent relayout during drag.":
 	"ドラッグ中に頻繁にレイアウト更新がなされないようにするため、遅延時間は必要です。",
-	" Increase if you annoy frequent relayout during drag.":
+	" Increase if you feel annoyance for frequent relayout during drag.":
 	"ドラッグ中にレイアウト更新がなされるのが気になるのであれば、値を増やしてください。",
-	" Or, decrease if you annoy delay when maximize or normalize window.":
+	" Or, decrease if you feel annoyance for delay when maximizing or normalizing window size.":
 	"ウィンドウの最大化や標準サイズに戻す時に遅延が気になるのであれば、値を減らしてください。",
 	"Basic settings":
 	"基本設定",
@@ -502,13 +502,45 @@
 	"すべてのIDをクリア",
 	"Clear all ﾜｯﾁｮｲ":
 	"すべてのﾜｯﾁｮｲをクリア",
+	"To reflect some settings to tabs, you need to reload.":
+	"いくつかの設定は、タブをリロードするまで適用されません。",
+	"To reflect language setting to this popup, you need to reopen.":
+	"このポップアップに言語設定を適用するには、ポップアップを開きなおす必要があります。",
+	"Storage data handling":
+	"保存データの操作",
+	"Export":
+	"エクスポート",
+	"Import":
+	"インポート",
+	"Unlock to initialize":
+	"ロックをはずす",
+	"Initialize":
+	"初期化",
+	"When you click 'export', storage data - favorites, blocking IDs, and settings - are downloaded from local storage.":
+	"「エクスポート」をクリックすると、保存データ（お気に入り、ブロックID、設定）が内部ストレージからダウンロードされます。",
+	"When you click 'import' and select a file, storage data are cleared, then the file data are imported.":
+	"「インポート」をクリックすると、保存データが消去された後にファイルのデータがインポートされます。",
+	"When you unlock and click 'Initialize', storage data are cleared and initialized.":
+	"ロックをはずして「初期化」をクリックすると、保存データが消去、初期化されます。",
+	"So exporting before importing or initializing are recommended.":
+	"ですから、インポートや初期化の前にエクスポートしておくことをおすすめします。",
+	"Informations":
+	"インフォメーション",
+	"License":
+	"ライセンス",
+	"Privacy policy":
+	"プライバシーポリシー",
 	"in use":
 	"使用中",
 	"//src/popup/popup.js": true,
+	"This file is not exported.":
+	"このファイルはエクスポートされたものではありません。",
+	"File data are imported.":
+	"ファイルのデータがインポートされました。",
+	"Storage data are initialized.":
+	"保存データが初期化されました。",
 	"All":
 	"すべて",
-	"To reflect some settings to tabs, you need to reload.":
-	"いくつかの設定は、タブをリロードするまで適用されません。",
 	"//expired": true,
 	"init":
 	"初期化",
@@ -516,6 +548,8 @@
 	"お気に入り",
 	"Blocking IDs":
 	"ブロックID",
+	"Extra":
+	"その他",
 	"Thread view":
 	"スレッド表示",
 	"Form":

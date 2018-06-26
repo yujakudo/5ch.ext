@@ -842,8 +842,8 @@ function readcgi(){
 				//	set as new bookmark.
 				$(data.elm).addClass('bookmark');
 				var markdata = Storage.overWrite({
-					postid: 0, userid: '', forcedid: '', piaddr: ''
-				},data);
+					postid: 0, userid: '',
+				}, data);
 				bookmarks.set(pageInfo, data.postid, markdata);
 				b_set = true;
 			} else {
