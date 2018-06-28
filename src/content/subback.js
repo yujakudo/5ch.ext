@@ -77,11 +77,14 @@ function subback() {
 	collectLinks(threads, threads_exp);
 	cloneElement(threads, $(threads_exp));
 	var initSet = setToolBox();
-	onSortSwitch(initSet.order, true);
+	onSortSwitch(initSet.order, 1);
 	bindHandlers();
 	if(threads.marked.length) footerBar.signal.switch(2, true);
 	bookmarks.threadAlive(pageInfo, threads.marked);
-
+	//	scroll
+	if(prevPageInfo && prevPageInfo.reloaded && prevPageInfo.scroll_pos) {
+		$('html,body').scrollTop(prevPageInfo.scroll_pos);
+	} else if(curItem) footerBar.unitScroll.toItem(curItem.elm);
 	wall.show(false);
 	var time = Date.now() - pageInfo.date;
 	footerBar.text(
@@ -143,21 +146,25 @@ function subback() {
 		});
 		footerBar.setCallback(function(type) {
 			if(type==='resized' && onSortSwitch.win_width!=window.innerWidth) {
-				onSortSwitch();
+				onSortSwitch(undefined, 2);
+				return false;
 			}
 		});
 	}
+
 	/**
 	 * Sort list by balue and scroll to current item.
 	 * This called from switch.
-	 * @param {string} value Value of swithe. 'title', 'no', or 'num'.
-	 * @param {boolean} b_init set true when initiarize.
+	 * @param {string} [value] Value of swithe. 'title', 'no', or 'num'.
+	 * @param {number} [ncase] set 1 when initiarize, set 2 when resized.
 	 */
-	function onSortSwitch(value, b_init) {
-		if(value===undefined) value = onSortSwitch.value;
+	function onSortSwitch(value, ncase) {
+		if(value===undefined) {
+			value = onSortSwitch.value;
+		}
 		else onSortSwitch.value = value;
-		if(b_init) {
-			execSort(value);
+		if(ncase==1) {
+			execSort(value, ncase);
 			onSortSwitch.count = 0;
 		} else {
 			wall.show(true, true);
@@ -165,7 +172,7 @@ function subback() {
 			setTimeout(()=>{
 				onSortSwitch.count--;
 				if(onSortSwitch.count==0) {
-					execSort(value);
+					execSort(value, ncase);
 					wall.show(false);
 				}
 			}, 20);
@@ -175,8 +182,9 @@ function subback() {
 		/**
 		 * Execute sort
 		 * @param {string} value Value of swithe. 'title', 'no', or 'num'.
+	 * @param {number} [ncase] set 1 when initiarize, set 2 when resized.
 		 */
-		function execSort(value) {
+		function execSort(value, ncase) {
 			var list;
 			switch(value) {
 				case 'title':
@@ -190,10 +198,18 @@ function subback() {
 				break;
 			}
 			if(!list) return;
+			if(ncase==2) execSort.centerelm = footerBar.unitScroll.getElmInView(0, 0);
+			pageInfo.scroll_pos = window.pageYOffset;
 			makeBox(list, $(threads_exp), makeTitle);
 			footerBar.unitScroll.unitExp('.list-box');
-			if(curItem) footerBar.unitScroll.toItem(curItem.elm);
-			else footerBar.unitScroll.toItem(list[0].elm);
+			if(ncase==2 && execSort.centerelm) {
+				var box = $(execSort.centerelm).parent()[0];
+				footerBar.unitScroll.toItem(box, 0);
+			} else if(ncase!==1) {
+				$('html,body').scrollTop(pageInfo.scroll_pos);
+			}
+			// if(curItem) footerBar.unitScroll.toItem(curItem.elm);
+			// else footerBar.unitScroll.toItem(list[0].elm);
 		}
 		//
 		/**
@@ -225,7 +241,6 @@ function subback() {
 			threads.marked = [];
 		}
 		var list = threads.lists.no;
-		var prevPageInfo = getPrevPageInfo();
 		if(prevPageInfo && prevPageInfo.bid!==pageInfo.bid) {
 			prevPageInfo = null;
 		}

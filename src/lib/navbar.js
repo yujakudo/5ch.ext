@@ -114,7 +114,7 @@ Navbar.prototype.unitScrollCallback = function(type) {
 	if(type==='resized') {
 		this.unitScroll.options.footerHeight = this.$elm[0].offsetHeight;
 	}
-	if(this.options.callback) this.options.callback.call(this.options.this, type);
+	if(this.options.callback) return this.options.callback.call(this.options.this, type);
 };
 
 /**

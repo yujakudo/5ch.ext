@@ -19,6 +19,9 @@
 		"default_title": "5ch.ext",
 		"default_popup": "popup/popup.html"
 	},
+	"background": {
+		"scripts": ["background.js"]
+	},
 	"content_scripts": [
 		{
 			"matches": [

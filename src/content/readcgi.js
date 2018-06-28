@@ -316,15 +316,14 @@ function readcgi(){
 		//	Formbox
 		//	when click submit
 		$('.formbox form input[type="submit"]').click(function(event) {
-			var map = footerBar.unitScroll.makeMap();
-			var topitem = (map.in.length)? map.in[0]: (map.down)? map.down: map.up;
+			var topelm = footerBar.unitScroll.getElmInView(-1);
 			var postid = null;
-			if(topitem) {
-				postid = topitem.elm.id;
+			if(topelm) {
+				postid = topelm.id;
 				if(!postid) postid = pageInfo.max_postid;
 			}
 			//	save url to return present comment number.
-			savePageInfo('post', postid);
+			savePageInfo(postid);
 		});
 		//	if form sliding turned os,
 		if(settings.form.slide) {

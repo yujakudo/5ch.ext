@@ -13,6 +13,12 @@
 var pageInfo = null;
 
 /**
+ * previous pageInfo.
+ * @type {PageInfo}
+ */
+var prevPageInfo = null;
+
+/**
  * the storage object.
  * @type {Storage}
  */
@@ -73,7 +79,15 @@ Page.info = [
 pageInfo = getPageInfo(window.location.href);
 if(pageInfo.id!=Page.UNKNOWN) {
 	new Promise(function(resolve, reject) {
-		storage = new Storage('local', InitialData, resolve, saveError);
+		var call_cnt = 0;
+		chrome.runtime.sendMessage({ query: "get tabid" }, (msg)=>{
+			pageInfo.tabid = msg.tabid;
+			check2next();
+		});
+		storage = new Storage('local', InitialData, check2next, saveError);
+		function check2next() {
+			if(++call_cnt==2) resolve();
+		}
 	}).then(function() {
 		if(!storage.get('settings.enable')) return;
 		var info = Page.info[pageInfo.id];
@@ -96,6 +110,8 @@ if(pageInfo.id!=Page.UNKNOWN) {
 			var locale = storage.get('settings.language');
 			setLocale(locale, resolve);
 		}).then(function(){
+			//	previous pageinfo
+			prevPageInfo = getPrevPageInfo();
 			//	bookmarks.
 			bookmarks = new Bookmarks(storage, 'bookmarks');
 			//	footer toolbar
@@ -136,19 +152,18 @@ function afterPost() {
 	if(!storage.get('settings.readcgi.form.backAfterPost')) return;
 	var title = $('title:first').text();
 	if(title!=='書きこみました。') return;
-	var info = storage.get('pageInfo.post');
-	window.location.href = info.url;
+	var info = storage.get('pageInfo.'+pageInfo.tabid);
+	if(info) window.location.href = info.url;
 	return false;
 }
 
 /**
  * Seve pageInfo.
  * This is also used to specify query and segment of the page that wanted to jump.
- * @param {string} [attr] property. 'prev' or 'post'. 'prev' takes if omitted.
  * @param {*} segment segument to jump. especialy post ID.
  */
-function savePageInfo(attr, segment) {
-	if(attr===undefined) attr = 'prev';
+function savePageInfo(segment) {
+	var tabid = pageInfo.tabid;
 	var url = pageInfo.protocol + pageInfo.host + pageInfo.path;
 	if(pageInfo==Page.READCGI) {
 		if(pageInfo.query==='l50') {
@@ -157,22 +172,26 @@ function savePageInfo(attr, segment) {
 	}
 	if(segment) url += '#'+segment;
 	var info = storage.get('pageInfo');
-	info[attr] = {url: url, title: pageInfo.title, date: pageInfo.date};
+	info[tabid] = {
+		url: url, title: pageInfo.title, date: pageInfo.date, scroll_pos: pageInfo.scroll_pos,
+	};
 	storage.save('pageInfo');
 }
 
 /**
  * Get previous page information.
- * @param {string} [attr] property. 'prev' or 'post'. 'prev' takes if omitted.
  */
-function getPrevPageInfo(attr) {
-	if(attr===undefined) attr = 'prev';
-	var info = storage.get('pageInfo.'+attr);
+function getPrevPageInfo() {
+	var tabid = pageInfo.tabid;
+	var info = storage.get('pageInfo.'+tabid);
 	if(typeof info!=='object' || !('url' in info)) return false;
 	var pinfo = getPageInfo(info.url);
 	if(!pinfo) return false;
 	pinfo.title = info.title;
 	pinfo.date = info.date;
+	pinfo.scroll_pos = info.scroll_pos;
+	pinfo.tabid = tabid;
+	pinfo.reloaded = (pinfo.url===pageInfo.url);
 	return pinfo;
 }
 
@@ -285,6 +304,7 @@ function makeBox(list, $elm, callbackEachItem) {
 		var info = makeBox.screenInfo;
 		var elm_width = $elm[0].offsetWidth + 4;
 		if(info) {
+			info.boxNum = 0;
 			info.width = elm_width - info.frameWidth;
 			info.lineNum = Math.floor(info.width/info.lineWidth);
 			return info;

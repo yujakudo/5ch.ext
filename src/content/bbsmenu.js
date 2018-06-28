@@ -66,6 +66,12 @@ function bbsmenu() {
 	makeList(true);
 	$frag_old = null;
 	bindHandlers();
+	if(prevPageInfo && prevPageInfo.reloaded) {
+		$('html,body').scrollTop(prevPageInfo.scroll_pos);
+		// footerBar.unitScroll.toY(prevPageInfo.scroll_pos);
+	} else if(curItem) {
+		footerBar.unitScroll.toItem(curItem.elm);
+	}
 
 	wall.show(false);
 	var time = Date.now() - pageInfo.date;
@@ -130,6 +136,7 @@ function bbsmenu() {
 		footerBar.setCallback(function(type) {
 			if(type==='resized' && makeList.win_width!=window.innerWidth) {
 				makeList();
+				return false;
 			}
 		});
 	}
@@ -140,8 +147,6 @@ function bbsmenu() {
 	 * @param {jQuery} $content Element in that this works. 
 	 */
 	function collectLinks(boards, $content) {
-		var prevPageInfo = getPrevPageInfo();
-
 		boards.all = [];
 		boards.header = [];
 		boards.main = [];
@@ -180,7 +185,7 @@ function bbsmenu() {
 				}
 				info.category = category;
 				boards.main.push(info);
-				if(prevPageInfo && prevPageInfo.bid!==null && prevPageInfo.bid===info.bid) {
+				if(prevPageInfo && prevPageInfo.bid && prevPageInfo.bid===info.bid) {
 					curItem = info;
 				}
 				if(info.bid) {
@@ -302,9 +307,10 @@ function bbsmenu() {
 	 */
 	function makeList(b_init) {
 		if(b_init) {
-			execLayout();
+			execLayout(b_init);
 		} else {
 			wall.show(true, true);
+			makeList.centerelm = footerBar.unitScroll.getElmInView(0, 0);
 			setTimeout(()=>{
 				execLayout();
 				wall.show(false);
@@ -312,10 +318,13 @@ function bbsmenu() {
 		}
 		makeList.win_width = window.innerWidth;
 		//
-		function execLayout() {
+		function execLayout(b_init) {
 			makeBox(boards.all, $('.bbsmenu-container'), makeTitle);
 			footerBar.unitScroll.unitExp('.list-box');
-			if(curItem) footerBar.unitScroll.toItem(curItem.elm);
+			if(!b_init && makeList.centerelm) {
+				var box = $(makeList.centerelm).parent()[0];
+				footerBar.unitScroll.toItem(box, 0);
+			}
 		}
 	}
 

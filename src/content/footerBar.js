@@ -50,6 +50,8 @@ function createFooterBar(exp, pageInfo) {
 					enable: true,
 					icon: '&orarr;', desc: __('Update'),
 					func: function(event) {
+						pageInfo.scroll_pos = window.pageYOffset;
+						savePageInfo();
 						var url = pageInfo.protocol + pageInfo.host + pageInfo.path;
 						window.location.href = url;
 						event.preventDefault();

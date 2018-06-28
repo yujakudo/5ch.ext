@@ -109,13 +109,16 @@ UnitScroll.prototype.bind = function() {
 		this.resizing.tid = setTimeout(()=> {
 			this.resizing.tid = null;
 			this.elm_list = this.getElmList(this.options.unitExp);
-			var animate = this.options.animate;
-			this.options.animate = false;
-			if(this.resizing.prev && this.resizing.prev.elm) {
-				this.toItem(this.resizing.prev.elm, -1);
+			var b_scroll = true;
+			if(this.options.callback) b_scroll = this.options.callback.call(this.options.this, 'resized');
+			if(b_scroll!==false) {
+				var animate = this.options.animate;
+				this.options.animate = false;
+				if(this.resizing.prev && this.resizing.prev.elm) {
+					this.toItem(this.resizing.prev.elm, -1);
+				}
+				this.options.animate = animate;
 			}
-			this.options.animate = animate;
-			if(this.options.callback) this.options.callback.call(this.options.this, 'resized');
 		}, this.options.resizeDelay);
 	});
 };
@@ -501,5 +504,52 @@ UnitScroll.prototype.makeMap = function() {
 		else if(obj.check_res==0) map.in.push(obj);
 		else if(obj.check_res<0) map.up = obj;
 		else map.down = obj;
+	}
+};
+
+/**
+ * Get element in the view.
+ * @param {number} pos position of elm -1:top, 0:center, 1:bottom 
+ * @param {number} [child] set when get child, -1:top, 0:center, 1:bottom 
+ * @return {Element|false} element at top or it's child. or false when failure.
+ */
+UnitScroll.prototype.getElmInView = function(pos, child) {
+	var map = this.makeMap();
+	var item;
+	if(map.in.length) {
+		if(pos<0) item = map.in[0];
+		else if(pos>0) item = map.in[map.in.length - 1];
+		else item = getCenter.call(this, map.in);
+	} else {
+		if(!map.up) item = map.down;
+		else if(!map.down) item = map.up;
+		else {
+			if(pos<0) item = map.up;
+			else if(pos>0) item = map.down;
+			else item = getCenter.call(this, [map.up, map.down]);
+		}
+	}
+	if(!item) return false;
+	if(child===undefined) return item.elm;
+	var children = $(item.elm).children();
+	if(!children[0]) return false;
+	if(child<0) return children[0];
+	if(child>0) return children[children.length - 1];
+	return children[Math.floor(children.length/2)];
+	//
+	function getCenter(map) {
+		var win_h = this.windowHeight();
+		var y = this.options.headerHeight + win_h/2;
+		var min_dist = undefined;
+		var item;
+		for(var i=0; i<map.length; i++) {
+			var rect = map[i].rect;
+			var dist = Math.abs(y - (rect.top + rect.height/2));
+			if(min_dist===undefined || dist<min_dist) {
+				min_dist = dist;
+				item = map[i];
+			}
+		}
+		return item;
 	}
 };
