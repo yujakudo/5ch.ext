@@ -93,12 +93,12 @@ PostTool.prototype.openBox = function(event, post) {
 	$('li.copy_post', this.$elm).removeClass('hidden');
 	if(!post) return;
 	if(!post.blocked) {
+		$('li.sw_bookmark', this.$elm).removeClass('hidden');
 		block_text = 'Block ';
 		if((post.next && post.next.length) || (post.prev && post.prev.length)) {
 			$('li.tree_view', this.$elm).removeClass('hidden');
 		}
 		if(post.userid && post.userid!=='0')	{
-			$('li.sw_bookmark', this.$elm).removeClass('hidden');
 			$('li.list_userid', this.$elm).removeClass('hidden');
 		}
 		if(post.forcedid) {

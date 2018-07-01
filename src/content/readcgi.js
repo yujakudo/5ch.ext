@@ -201,7 +201,7 @@ function readcgi(){
 				//	parse url and call enter if it may url to media
 				var url = $(this).attr('href');
 				var info = extractUrl(url);
-				if(info.host==='jump.5ch.net') {
+				if(fch_jumps.indexOf(info.host)>=0) {
 					url = info.search;
 					if(url.substr(0,4)!=='http') {
 						url = 'http://' + url;

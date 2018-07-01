@@ -26,7 +26,11 @@
 		{
 			"matches": [
 				"http://*.5ch.net/*",
-				"https://*.5ch.net/*"
+				"https://*.5ch.net/*",
+				"http://*.bbspink.com/*",
+				"https://*.bbspink.com/*",
+				"http://*.pinktower.com/*",
+				"https://*.pinktower.com/*"
 			],
 			"css": ["lib/switch.css", "content/content.css"],
 			"js": [

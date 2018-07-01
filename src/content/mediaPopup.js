@@ -75,6 +75,14 @@ MediaPopup.sites = {
 		autoplay: '?autoPlay=1',
 		monitorSize: 1,
 	},
+	'dai.ly': {
+		pattern: /^\/([^?]{6,})(\?(.+))?/,
+		html: '<iframe frameborder="0" width="%width%" height="%height%"'
+		+' src="//www.dailymotion.com/embed/video/%1%%autoplay%"'
+		+' allowfullscreen="" allow="autoplay"></iframe>',
+		autoplay: '?autoPlay=1',
+		monitorSize: 1,
+	},
 	'imgur.com': {
 		pattern: /^\/([^\?\.]{6,})(.[\w]+)?/,
 		html: '<blockquote class="imgur-embed-pub" lang="en" data-id="%1%">'

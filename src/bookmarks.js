@@ -6,6 +6,12 @@
  */
 
 /**
+ * BBS menu page.
+ * @type {string}
+ */
+var fch_bbsmenu = 'https://menu.5ch.net/bbstable.html';
+
+/**
  * @typedef Bookmarks.Place
  * @type {object}
  * @desc Place on the tree structure like directory of the Bookmarks.
@@ -47,7 +53,7 @@ Bookmarks.prototype.save = function() {
 Bookmarks.prototype.gethbid = function(info) {
 	if(!('host' in info) || !('bid' in info)) return false;
 	var host = info.host;
-	return host.substr(0, host.indexOf('.'))+'.'+info.bid;
+	return host+':'+info.bid;
 };
 
 /**
@@ -251,9 +257,9 @@ Bookmarks.prototype.getUrl = function(path) {
 		path = path.split('/');
 		if(!path[0]) path.shift();
 	}
-	if(path.length==0) return 'https://menu.5ch.net/bbstable.html';
-	var hbid = path[0].split('.');
-	var host = 'http://'+hbid[0]+'.5ch.net/';
+	if(path.length==0) return fch_bbsmenu;
+	var hbid = path[0].split(':');
+	var host = 'http://'+hbid[0]+'/';
 	if(path.length==1) return host+hbid[1]+'/subback.html';
 	var url = host+'test/read.cgi/'+hbid[1]+'/'+path[1]+'/';
 	if(path.length==2) return url;

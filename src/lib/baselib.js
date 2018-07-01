@@ -47,6 +47,10 @@ function jumpTo(url, b_new_tab, event) {
 		var win = window.open(url, '_blank');
 		win.focus();
 	} else {
+		if(pageInfo) {
+			pageInfo.scroll_pos = window.pageYOffset;
+			savePageInfo();
+		}
 		window.location.href = url;
 	}
 	if(event) event.preventDefault();

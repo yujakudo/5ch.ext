@@ -50,6 +50,18 @@ var readcgiUnitExp = '.post:not(.blocked), .formbox';
 // var readcgiUnitExp = '.post';
 
 /**
+ * Domains
+ * @type {string[]}
+ */
+var fch_domains = ['5ch.net', 'bbspink.com'];
+
+/**
+ * Jump pages.
+ * @type {string[]}
+ */
+var fch_jumps = ['jump.5ch.net', 'www.pinktower.com'];
+
+/**
  * Pages information and IDs.
  * @type {object}
  */
@@ -240,7 +252,7 @@ function getPageInfo(url) {
 		info.threadsUrl = 'https://'+info.host+'/'+info.bid+'/subback.html';
 	} else if(info.path.indexOf('/bbstable.html')>=0) {
 		info.id = Page.BOARDS;
-	} else if(info.host==='jump.5ch.net') {
+	} else if(fch_jumps.indexOf(info.host)>=0) {
 		info.id = Page.JUMP;
 	} else if(info.path==='/test/bbs.cgi') {
 		info.id = Page.AFTERPOST;

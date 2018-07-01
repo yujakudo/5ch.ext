@@ -25,7 +25,7 @@ function createFooterBar(exp, pageInfo) {
 					icon: '&Colon;', desc: __('List of boards'),
 					func: function(event) {
 						savePageInfo();
-						jumpTo('https://menu.5ch.net/bbstable.html', false, event);
+						jumpTo(fch_bbsmenu, false, event);
 					},
 					key: settings.key.toBoards,
 				},
