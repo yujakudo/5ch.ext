@@ -54,7 +54,9 @@ Last updated June 24, 2018.
 
 1. 対象とするサイト
 この拡張機能は以下のサイトを対象とします。
-- http://*.5ch.net あるいは https://*.5ch.net
+- http://*.5ch.net 及び https://*.5ch.net
+- http://*.bbspink.com 及び https://*.bbspink.com
+- http://*.pinktower.com 及び https://*.pinktower.com
 
 この拡張機能がこれ以外のサイトで動作することはありません。
 
