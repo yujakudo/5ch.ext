@@ -58,5 +58,6 @@ typings/
 pub/
 recycle/
 *.nex
+*.crx
 *.pem
 *.bat
